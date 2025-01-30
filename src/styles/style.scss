@@ -1,0 +1,59 @@
+.main {
+  position: relative;
+
+  overflow: hidden;
+
+  width: 100vw;
+  height: 100vh;
+
+  background: #000;
+  background-image: url('../assets/images/background.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto 100%;
+}
+
+.milestone {
+  position: absolute;
+  transform: translate(-50%, -50%);
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 44%;
+
+  &__active-animation {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+  }
+
+  &_1 {
+    width: calc(100vh * 0.19);
+    height: calc(100vh * 0.19);
+    background-image: url('../assets/images/milestone_1.png');
+
+    .milestone__active-animation {
+      transform: rotateX(-31deg) translate(-0.1vh, -0.13vh);
+    }
+  }
+
+  &_2 {
+    width: calc(100vh * 0.17);
+    height: calc(100vh * 0.17);
+    background-image: url('../assets/images/milestone_2.png');
+
+    .milestone__active-animation {
+      transform: rotateX(-31deg) translate(0, -0.28vh);
+    }
+  }
+
+  &_active {
+    .milestone__active-animation {
+      opacity: 1;
+    }
+  }
+
+  &_done {
+    background-image: url('../assets/images/milestone_done.png');
+  }
+}

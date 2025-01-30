@@ -1,7 +1,7 @@
-import './main.css'
+import { keepMilestonesInPlace } from './scripts/keepMilestonesInPlace'
 
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-  <div>
-    test
-  </div>
-`
+import './assets/fonts/fonts.css'
+import './styles/main.css'
+import './styles/style.scss'
+
+keepMilestonesInPlace()

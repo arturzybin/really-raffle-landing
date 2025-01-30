@@ -4,7 +4,7 @@
   "tabWidth": 2,
   "printWidth": 120,
   "plugins": ["@trivago/prettier-plugin-sort-imports"],
-  "importOrder": ["^(.+?)(ts)$", "^(.+?)(scss|css)$", "^(.+?)(svg|png)$", "^[./]"],
+  "importOrder": ["^(.+?)scripts(.+?)$", "^(.+?)(scss|css)$", "^(.+?)(svg|png)$", "^[./]"],
   "importOrderSeparation": true,
   "importOrderSortSpecifiers": true,
   "importOrderCaseInsensitive": true
