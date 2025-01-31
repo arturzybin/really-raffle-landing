@@ -1,0 +1,83 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Really</title>
+    <script type="module" crossorigin src="/assets/index-DAoOVJb5.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-CYRsEHqP.css">
+  </head>
+
+  <body>
+    <div id="main" class="main">
+      <button id="start-button" class="start-button"></button>
+
+      <div id="milestone-1" class="milestone milestone_1">
+        <lottie-player
+          src="/lottie/activeMilestone.json"
+          class="milestone__active-animation"
+          loop
+          autoplay
+        ></lottie-player>
+      </div>
+
+      <div id="milestone-2" class="milestone milestone_2">
+        <lottie-player
+          src="/lottie/activeMilestone.json"
+          class="milestone__active-animation"
+          loop
+          autoplay
+        ></lottie-player>
+      </div>
+
+      <lottie-player id="avatar" src="/lottie/avatar.json" class="avatar" loop autoplay></lottie-player>
+
+      <div class="popup" id="popup-1">
+        <img src="/images/popup_1_background.png" class="popup__background" />
+
+        <form id="form-1">
+          <input class="popup__input popup__input_type_name" placeholder="Full Name" type="text" name="Full Name" />
+          <input class="popup__input popup__input_type_company" placeholder="Company" type="text" name="Company" />
+          <input class="popup__input popup__input_type_job" placeholder="Job Title" type="text" name="Job Title" />
+          <input class="popup__input popup__input_type_email" placeholder="Email" type="text" name="Email" />
+
+          <button class="popup__submit-button" type="submit"></button>
+        </form>
+
+        <div class="popup__loader-container">
+          <div class="popup__loader"></div>
+        </div>
+
+        <div class="popup__error" id="form-1-error"></div>
+      </div>
+
+      <div class="popup" id="popup-2">
+        <img src="/images/popup_2_background.png" class="popup__background" />
+
+        <form id="form-2">
+          <input class="popup__input popup__input_type_answer" placeholder="Your answer" type="text" name="Answer" />
+
+          <button class="popup__submit-button" type="submit"></button>
+        </form>
+
+        <div class="popup__loader-container">
+          <div class="popup__loader"></div>
+        </div>
+
+        <div class="popup__error" id="form-2-error"></div>
+      </div>
+
+      <div class="popup" id="popup-3">
+        <img src="/images/popup_3_background.png" class="popup__background" />
+
+        <form id="form-3">
+          <button class="popup__submit-button" type="submit"></button>
+        </form>
+      </div>
+    </div>
+
+    <script src="/lottie-player.js"></script>
+  </body>
+</html>
