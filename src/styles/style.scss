@@ -119,6 +119,12 @@
     display: block;
   }
 
+  &_loading {
+    .popup__loader-container {
+      display: grid;
+    }
+  }
+
   &__background {
     position: absolute;
     top: 14vh;
@@ -183,5 +189,56 @@
     height: 4.5vh;
 
     opacity: 0;
+  }
+
+  /* stylelint-disable-next-line no-descending-specificity */
+  &__loader-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: none;
+    place-items: center;
+
+    width: 100vw;
+    height: 100vh;
+
+    background-color: rgb(0 0 0 / 50%);
+  }
+
+  &__loader {
+    width: 8vh;
+    height: 8vh;
+    border: 1vh solid #fff;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+
+    animation: rotation 1s linear infinite;
+  }
+
+  &__error {
+    pointer-events: none;
+
+    position: absolute;
+    bottom: 2vh;
+    left: 50vw;
+    transform: translateX(-50%);
+
+    width: 35vh;
+
+    font-size: 3vh;
+    color: red;
+    text-align: center;
+    text-shadow: #000 2px 2px 10px;
+  }
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
   }
 }
