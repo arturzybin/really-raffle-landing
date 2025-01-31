@@ -27,10 +27,10 @@ function openFirstPopup() {
 
 function handleFirstForm() {
   const popup = document.getElementById('popup-1')!
-  const form = document.getElementById('popup-1-form') as HTMLFormElement
+  const form = document.getElementById('form-1') as HTMLFormElement
   const formError = document.getElementById('form-1-error')!
 
-  form?.addEventListener('submit', (e) => {
+  form.addEventListener('submit', (e) => {
     e.preventDefault()
 
     const formData = new FormData(form)
@@ -103,10 +103,10 @@ function openSecondPopup(firstFormData: FormData) {
 
 function handleSecondForm(firstFormData: FormData) {
   const popup = document.getElementById('popup-2')!
-  const form = document.getElementById('popup-2-form') as HTMLFormElement
+  const form = document.getElementById('form-2') as HTMLFormElement
   const formError = document.getElementById('form-2-error')!
 
-  form?.addEventListener('submit', (e) => {
+  form.addEventListener('submit', (e) => {
     e.preventDefault()
 
     const secondFormData = new FormData(form)
@@ -150,4 +150,20 @@ function handleSecondForm(firstFormData: FormData) {
   })
 }
 
-function openThirdPopup() {}
+function openThirdPopup() {
+  const thirdPopup = document.getElementById('popup-3')!
+  thirdPopup.classList.add('popup_visible')
+
+  handleThirdForm()
+}
+
+function handleThirdForm() {
+  const popup = document.getElementById('popup-3')!
+  const form = document.getElementById('form-3') as HTMLFormElement
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault()
+
+    popup.classList.remove('popup_visible')
+  })
+}
