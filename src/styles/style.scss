@@ -50,6 +50,7 @@
 
     .milestone__active-animation {
       transform: rotateX(-31deg) translate(-0.1vh, -0.13vh);
+      transition: opacity 1s ease-in-out;
     }
   }
 
@@ -68,6 +69,7 @@
 
     .milestone__active-animation {
       opacity: 1;
+      transition: opacity 1s ease-in-out;
     }
   }
 

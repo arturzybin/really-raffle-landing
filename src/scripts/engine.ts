@@ -1,6 +1,11 @@
+import { setAvatarPosition } from './avatarPosition'
+import { showStarsAnimation } from './showStarsAnimation'
+
 export function startEngine() {
   const startButton = document.getElementById('start-button')!
   const firstMilestone = document.getElementById('milestone-1')!
+
+  firstMilestone.classList.add('milestone_active')
 
   startButton.addEventListener('click', openFirstPopup)
   firstMilestone.addEventListener('click', openFirstPopup)
@@ -66,4 +71,26 @@ function handleFirstForm() {
   })
 }
 
-function goToSecondMilestone() {}
+function goToSecondMilestone() {
+  const firstMilestone = document.getElementById('milestone-1')!
+  const secondMilestone = document.getElementById('milestone-2')!
+
+  showStarsAnimation()
+  firstMilestone.classList.remove('milestone_active')
+
+  setTimeout(() => {
+    firstMilestone.classList.add('milestone_done')
+    setAvatarPosition('switching')
+  }, 1000)
+
+  setTimeout(() => {
+    setAvatarPosition('milestone2')
+    secondMilestone.classList.add('milestone_active')
+  }, 2000)
+
+  setTimeout(() => {
+    openSecondPopup()
+  }, 5000)
+}
+
+function openSecondPopup() {}
