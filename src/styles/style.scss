@@ -102,3 +102,86 @@
     left: var(--avatar-animation-end-left);
   }
 }
+
+.popup {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: none;
+
+  width: 100vw;
+  height: 100vh;
+
+  background-color: rgb(0 0 0 / 70%);
+
+  &_visible {
+    display: block;
+  }
+
+  &__background {
+    position: absolute;
+    top: 14vh;
+    left: 50vw;
+    transform: translateX(-50%);
+
+    height: calc(73vh);
+  }
+
+  &__input {
+    position: absolute;
+    left: 50vw;
+    transform: translateX(-50%);
+
+    width: 22vh;
+    border: none;
+
+    font-size: 1.75vh;
+    line-height: 3.5vh;
+    color: #3c53a3;
+
+    background: none;
+    outline: none;
+
+    &::placeholder {
+      color: #3c53a3;
+    }
+
+    &_type_name {
+      top: 48.05vh;
+    }
+
+    &_type_company {
+      top: 54.25vh;
+    }
+
+    &_type_job {
+      top: 60.45vh;
+    }
+
+    &_type_email {
+      top: 66.62vh;
+    }
+
+    &_type_answer {
+      top: 63.85vh;
+      width: 13vh;
+      line-height: 4.8vh;
+      text-align: center;
+    }
+  }
+
+  &__submit-button {
+    cursor: pointer;
+
+    position: absolute;
+    top: 79vh;
+    left: 50vw;
+    transform: translateX(-50%);
+
+    width: 15vh;
+    height: 4.5vh;
+
+    opacity: 0;
+  }
+}
