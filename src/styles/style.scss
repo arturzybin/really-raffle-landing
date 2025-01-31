@@ -79,3 +79,26 @@
     opacity: 1;
   }
 }
+
+.avatar {
+  position: absolute;
+  transform: translate(-50%, -120%);
+  width: calc(100vh * 0.13);
+  height: calc(100vh * 0.13);
+
+  &_switching-milestones {
+    animation: avatar-switching-milestones 1s ease-in-out forwards;
+  }
+}
+
+@keyframes avatar-switching-milestones {
+  from {
+    top: var(--avatar-animation-start-top);
+    left: var(--avatar-animation-start-left);
+  }
+
+  to {
+    top: var(--avatar-animation-end-top);
+    left: var(--avatar-animation-end-left);
+  }
+}
