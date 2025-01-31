@@ -34,12 +34,13 @@ function handleFirstForm() {
     e.preventDefault()
 
     const formData = new FormData(form)
-    formData.set('Form ID', '1')
 
     if (['Full Name', 'Company', 'Job Title', 'Email'].some((key) => !formData.get(key))) {
       formError.innerHTML = 'Please fill out all the fields'
       return
     }
+
+    formData.set('Form ID', '1')
 
     formError.innerHTML = ''
     popup.classList.add('popup_loading')
@@ -60,7 +61,7 @@ function handleFirstForm() {
 
         formError.innerHTML = ''
         popup.classList.remove('popup_visible')
-        goToSecondMilestone()
+        goToSecondMilestone(formData)
       })
       .catch(() => {
         formError.innerHTML = 'Something went wrong :(<br />Please try again'
@@ -71,7 +72,7 @@ function handleFirstForm() {
   })
 }
 
-function goToSecondMilestone() {
+function goToSecondMilestone(firstFormData: FormData) {
   const firstMilestone = document.getElementById('milestone-1')!
   const secondMilestone = document.getElementById('milestone-2')!
 
@@ -89,8 +90,64 @@ function goToSecondMilestone() {
   }, 2000)
 
   setTimeout(() => {
-    openSecondPopup()
-  }, 5000)
+    openSecondPopup(firstFormData)
+  }, 4000)
 }
 
-function openSecondPopup() {}
+function openSecondPopup(firstFormData: FormData) {
+  const secondPopup = document.getElementById('popup-2')!
+  secondPopup.classList.add('popup_visible')
+
+  handleSecondForm(firstFormData)
+}
+
+function handleSecondForm(firstFormData: FormData) {
+  const popup = document.getElementById('popup-2')!
+  const form = document.getElementById('popup-2-form') as HTMLFormElement
+  const formError = document.getElementById('form-2-error')!
+
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault()
+
+    const secondFormData = new FormData(form)
+
+    if (!secondFormData.get('Answer')) {
+      formError.innerHTML = 'Please fill out all the fields'
+      return
+    }
+
+    const formData = firstFormData
+    formData.set('Form ID', '2')
+    formData.set('Answer', secondFormData.get('Answer')!)
+
+    formError.innerHTML = ''
+    popup.classList.add('popup_loading')
+
+    fetch(
+      'https://script.google.com/macros/s/AKfycby0zLMJeUtlcOQy14SMzQJRdJEM68LvgzjWOcoqInhVr1RJ-HaJZONXEbQGM4V8tpWbIw/exec',
+      {
+        method: 'POST',
+        body: formData,
+      },
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.result !== 'success') {
+          formError.innerHTML = 'Something went wrong :(<br />Please try again'
+          return
+        }
+
+        formError.innerHTML = ''
+        popup.classList.remove('popup_visible')
+        openThirdPopup()
+      })
+      .catch(() => {
+        formError.innerHTML = 'Something went wrong :(<br />Please try again'
+      })
+      .finally(() => {
+        popup.classList.remove('popup_loading')
+      })
+  })
+}
+
+function openThirdPopup() {}
