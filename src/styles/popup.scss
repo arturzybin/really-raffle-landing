@@ -20,6 +20,15 @@
     }
   }
 
+  &__top-image {
+    position: absolute;
+    top: 13.6dvh;
+    left: 50dvw;
+    transform: translateX(-50%);
+
+    height: 11.4dvh;
+  }
+
   &__background {
     position: absolute;
     top: 14dvh;
