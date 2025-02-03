@@ -43,6 +43,11 @@ function handleFirstForm() {
       return
     }
 
+    if (!/^\d+$/.test(answer)) {
+      formError.innerHTML = 'Please enter only numbers for your coin guess'
+      return
+    }
+
     formError.innerHTML = ''
     popup.classList.remove('popup_visible')
 
