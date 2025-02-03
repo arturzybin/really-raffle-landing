@@ -6,13 +6,23 @@
     <link rel="icon" type="image/png" href="/really-raffle-landing/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Really</title>
-    <script type="module" crossorigin src="/really-raffle-landing/assets/index-Bewyi_Ny.js"></script>
-    <link rel="stylesheet" crossorigin href="/really-raffle-landing/assets/index-Dr0XENOO.css">
+    <script type="module" crossorigin src="/really-raffle-landing/assets/index-CY-ACN8J.js"></script>
+    <link rel="stylesheet" crossorigin href="/really-raffle-landing/assets/index-OhXLUTpk.css">
   </head>
 
   <body>
     <div id="main" class="main">
-      <button id="start-button" class="start-button"></button>
+      <div id="header" class="header">
+        <div class="header__top">Really - Play to Earn by Persona.ly</div>
+        <div class="header__bottom">
+          <img class="header__logo" src="/really-raffle-landing/images/header_logo.svg" />
+          <div class="header__content">
+            <div id="header-text" class="header__text">Challenge 1:<br />Guess the number of coins</div>
+            <img class="header__stars" src="/really-raffle-landing/images/header_stars.png" />
+          </div>
+          <img class="header__button" src="/really-raffle-landing/images/header_button.png" />
+        </div>
+      </div>
 
       <div id="milestone-1" class="milestone milestone_1">
         <lottie-player
@@ -32,16 +42,21 @@
         ></lottie-player>
       </div>
 
-      <lottie-player id="avatar" src="/really-raffle-landing/lottie/avatar.json" class="avatar" loop autoplay></lottie-player>
+      <lottie-player
+        id="avatar"
+        src="/really-raffle-landing/lottie/avatar.json"
+        class="avatar"
+        loop
+        autoplay
+      ></lottie-player>
 
       <div class="popup" id="popup-1">
+        <img src="/really-raffle-landing/images/popup_top_image.png" class="popup__top-image" draggable="false" />
+
         <img src="/really-raffle-landing/images/popup_1_background.png" class="popup__background" draggable="false" />
 
         <form id="form-1">
-          <input class="popup__input popup__input_type_name" placeholder="Full Name" type="text" name="Full Name" />
-          <input class="popup__input popup__input_type_company" placeholder="Company" type="text" name="Company" />
-          <input class="popup__input popup__input_type_job" placeholder="Job Title" type="text" name="Job Title" />
-          <input class="popup__input popup__input_type_email" placeholder="Email" type="text" name="Email" />
+          <input class="popup__input popup__input_type_answer" placeholder="Your answer" type="text" name="Answer" />
 
           <button class="popup__submit-button" type="submit"></button>
         </form>
@@ -54,10 +69,15 @@
       </div>
 
       <div class="popup" id="popup-2">
+        <img src="/really-raffle-landing/images/popup_top_image.png" class="popup__top-image" draggable="false" />
+
         <img src="/really-raffle-landing/images/popup_2_background.png" class="popup__background" draggable="false" />
 
         <form id="form-2">
-          <input class="popup__input popup__input_type_answer" placeholder="Your answer" type="text" name="Answer" />
+          <input class="popup__input popup__input_type_name" placeholder="Full Name" type="text" name="Full Name" />
+          <input class="popup__input popup__input_type_company" placeholder="Company" type="text" name="Company" />
+          <input class="popup__input popup__input_type_job" placeholder="Job Title" type="text" name="Job Title" />
+          <input class="popup__input popup__input_type_email" placeholder="Work Email" type="text" name="Work Email" />
 
           <button class="popup__submit-button" type="submit"></button>
         </form>
@@ -70,6 +90,8 @@
       </div>
 
       <div class="popup" id="popup-3">
+        <img src="/really-raffle-landing/images/popup_top_image.png" class="popup__top-image" draggable="false" />
+
         <img src="/really-raffle-landing/images/popup_3_background.png" class="popup__background" draggable="false" />
 
         <form id="form-3">
