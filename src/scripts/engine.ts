@@ -39,7 +39,7 @@ function handleFirstForm() {
     const answer = formData.get('Answer') as string
 
     if (!answer) {
-      formError.innerHTML = 'Please fill out all the fields'
+      formError.innerHTML = 'Please complete the form before submitting'
       return
     }
 
@@ -124,7 +124,7 @@ function handleSecondForm(answer: string) {
     const formData = new FormData(form)
 
     if (['Full Name', 'Company', 'Job Title', 'Work Email'].some((key) => !formData.get(key))) {
-      formError.innerHTML = 'Please fill out all the fields'
+      formError.innerHTML = 'Please complete the form before submitting'
       return
     }
 
