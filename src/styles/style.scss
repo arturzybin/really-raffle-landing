@@ -3,8 +3,8 @@
 
   overflow: hidden;
 
-  width: 100vw;
-  height: 100vh;
+  width: 100dvw;
+  height: 100dvh;
 
   background: #000;
   background-image: url('../assets/images/background.png');
@@ -18,11 +18,11 @@
 
   position: absolute;
   top: 0;
-  left: 50vw;
+  left: 50dvw;
   transform: translateX(-50%);
 
-  width: 46vh;
-  height: 10.6vh;
+  width: 100dvw;
+  height: 10.6dvh;
 
   opacity: 0;
 }
@@ -44,12 +44,12 @@
   }
 
   &_1 {
-    width: calc(100vh * 0.19);
-    height: calc(100vh * 0.19);
+    width: 19dvh;
+    height: 19dvh;
     background-image: url('../assets/images/milestone_1.png');
 
     .milestone__active-animation {
-      transform: rotateX(-31deg) translate(-0.1vh, -0.13vh);
+      transform: rotateX(-31deg) translate(-0.1dvh, -0.13dvh);
       transition: opacity 1s ease-in-out;
     }
 
@@ -59,12 +59,12 @@
   }
 
   &_2 {
-    width: calc(100vh * 0.17);
-    height: calc(100vh * 0.17);
+    width: 17dvh;
+    height: 17dvh;
     background-image: url('../assets/images/milestone_2.png');
 
     .milestone__active-animation {
-      transform: rotateX(-31deg) translate(0, -0.28vh);
+      transform: rotateX(-31deg) translate(0, -0.28dvh);
     }
   }
 
@@ -105,8 +105,8 @@
 .avatar {
   position: absolute;
   transform: translate(-50%, -120%);
-  width: calc(100vh * 0.13);
-  height: calc(100vh * 0.13);
+  width: 13dvh;
+  height: 13dvh;
 
   &_switching-milestones {
     animation: avatar-switching-milestones 1s ease-in-out forwards;
@@ -132,8 +132,8 @@
 
   display: none;
 
-  width: 100vw;
-  height: 100vh;
+  width: 100dvw;
+  height: 100dvh;
 
   background-color: rgb(0 0 0 / 70%);
 
@@ -149,23 +149,23 @@
 
   &__background {
     position: absolute;
-    top: 14vh;
-    left: 50vw;
+    top: 14dvh;
+    left: 50dvw;
     transform: translateX(-50%);
 
-    height: calc(73vh);
+    height: 73dvh;
   }
 
   &__input {
     position: absolute;
-    left: 50vw;
+    left: 50dvw;
     transform: translateX(-50%);
 
-    width: 22vh;
+    width: 22dvh;
     border: none;
 
-    font-size: 1.75vh;
-    line-height: 3.5vh;
+    font-size: 1.75dvh;
+    line-height: 3.5dvh;
     color: #3c53a3;
 
     background: none;
@@ -176,25 +176,25 @@
     }
 
     &_type_name {
-      top: 48.05vh;
+      top: 48.05dvh;
     }
 
     &_type_company {
-      top: 54.25vh;
+      top: 54.25dvh;
     }
 
     &_type_job {
-      top: 60.45vh;
+      top: 60.45dvh;
     }
 
     &_type_email {
-      top: 66.62vh;
+      top: 66.62dvh;
     }
 
     &_type_answer {
-      top: 63.85vh;
-      width: 13vh;
-      line-height: 4.8vh;
+      top: 63.85dvh;
+      width: 13dvh;
+      line-height: 4.8dvh;
       text-align: center;
     }
   }
@@ -203,12 +203,12 @@
     cursor: pointer;
 
     position: absolute;
-    top: 79vh;
-    left: 50vw;
+    top: 79dvh;
+    left: 50dvw;
     transform: translateX(-50%);
 
-    width: 15vh;
-    height: 4.5vh;
+    width: 15dvh;
+    height: 4.5dvh;
 
     opacity: 0;
 
@@ -224,16 +224,16 @@
     display: none;
     place-items: center;
 
-    width: 100vw;
-    height: 100vh;
+    width: 100dvw;
+    height: 100dvh;
 
     background-color: rgb(0 0 0 / 50%);
   }
 
   &__loader {
-    width: 8vh;
-    height: 8vh;
-    border: 1vh solid #fff;
+    width: 8dvh;
+    height: 8dvh;
+    border: 1dvh solid #fff;
     border-bottom-color: transparent;
     border-radius: 50%;
 
@@ -244,13 +244,13 @@
     pointer-events: none;
 
     position: absolute;
-    bottom: 2vh;
-    left: 50vw;
+    bottom: 2dvh;
+    left: 50dvw;
     transform: translateX(-50%);
 
-    width: 35vh;
+    width: 35dvh;
 
-    font-size: 3vh;
+    font-size: 3dvh;
     color: red;
     text-align: center;
     text-shadow: #000 2px 2px 10px;
