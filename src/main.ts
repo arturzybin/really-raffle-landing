@@ -1,11 +1,7 @@
-import { keepAvatarInPlace } from './scripts/avatarPosition'
 import { startEngine } from './scripts/engine'
-import { keepMilestonesInPlace } from './scripts/keepMilestonesInPlace'
 
-import './assets/fonts/fonts.css'
-import './styles/main.css'
+import './assets/fonts/fonts.scss'
+import './styles/reset.scss'
 import './styles/style.scss'
 
-keepMilestonesInPlace()
-keepAvatarInPlace()
 startEngine()

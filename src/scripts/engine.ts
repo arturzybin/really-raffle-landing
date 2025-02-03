@@ -1,14 +1,15 @@
-import { setAvatarPosition } from './avatarPosition'
 import { showStarsAnimation } from './showStarsAnimation'
 
 export function startEngine() {
-  const startButton = document.getElementById('start-button')!
+  const avatar = document.getElementById('avatar')!
+  avatar.classList.add('avatar_position_1')
+
   const firstMilestone = document.getElementById('milestone-1')!
-
   firstMilestone.classList.add('milestone_active')
-
-  startButton.addEventListener('click', openFirstPopup)
   firstMilestone.addEventListener('click', openFirstPopup)
+
+  const startButton = document.getElementById('start-button')!
+  startButton.addEventListener('click', openFirstPopup)
 }
 
 function openFirstPopup() {
@@ -75,17 +76,19 @@ function handleFirstForm() {
 function goToSecondMilestone(firstFormData: FormData) {
   const firstMilestone = document.getElementById('milestone-1')!
   const secondMilestone = document.getElementById('milestone-2')!
+  const avatar = document.getElementById('avatar')!
 
   showStarsAnimation()
   firstMilestone.classList.remove('milestone_active')
+  firstMilestone.classList.add('milestone_done')
 
   setTimeout(() => {
-    firstMilestone.classList.add('milestone_done')
-    setAvatarPosition('switching')
+    avatar.classList.add('avatar_position_switching')
   }, 1000)
 
   setTimeout(() => {
-    setAvatarPosition('milestone2')
+    avatar.classList.remove('avatar_position_switching')
+    avatar.classList.add('avatar_position_2')
     secondMilestone.classList.add('milestone_active')
   }, 2000)
 
