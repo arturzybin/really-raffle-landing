@@ -35,46 +35,21 @@ function handleFirstForm() {
     e.preventDefault()
 
     const formData = new FormData(form)
+    const answer = formData.get('Answer') as string
 
-    if (['Full Name', 'Company', 'Job Title', 'Email'].some((key) => !formData.get(key))) {
+    if (!answer) {
       formError.innerHTML = 'Please fill out all the fields'
       return
     }
 
-    formData.set('Form ID', '1')
-
     formError.innerHTML = ''
-    popup.classList.add('popup_loading')
+    popup.classList.remove('popup_visible')
 
-    fetch(
-      'https://script.google.com/macros/s/AKfycby0zLMJeUtlcOQy14SMzQJRdJEM68LvgzjWOcoqInhVr1RJ-HaJZONXEbQGM4V8tpWbIw/exec',
-      {
-        method: 'POST',
-        body: formData,
-      },
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.result !== 'success') {
-          formError.innerHTML = 'Something went wrong :(<br />Please try again'
-          return
-        }
-
-        formError.innerHTML = ''
-        popup.classList.remove('popup_visible')
-
-        goToSecondMilestone(formData)
-      })
-      .catch(() => {
-        formError.innerHTML = 'Something went wrong :(<br />Please try again'
-      })
-      .finally(() => {
-        popup.classList.remove('popup_loading')
-      })
+    goToSecondMilestone(answer)
   })
 }
 
-function goToSecondMilestone(firstFormData: FormData) {
+function goToSecondMilestone(answer: string) {
   const firstMilestone = document.getElementById('milestone-1')!
   const secondMilestone = document.getElementById('milestone-2')!
   const avatar = document.getElementById('avatar')!
@@ -94,18 +69,18 @@ function goToSecondMilestone(firstFormData: FormData) {
   }, 2000)
 
   setTimeout(() => {
-    openSecondPopup(firstFormData)
+    openSecondPopup(answer)
   }, 4000)
 }
 
-function openSecondPopup(firstFormData: FormData) {
+function openSecondPopup(answer: string) {
   const secondPopup = document.getElementById('popup-2')!
   secondPopup.classList.add('popup_visible')
 
-  handleSecondForm(firstFormData)
+  handleSecondForm(answer)
 }
 
-function handleSecondForm(firstFormData: FormData) {
+function handleSecondForm(answer: string) {
   const secondMilestone = document.getElementById('milestone-2')!
   const popup = document.getElementById('popup-2')!
   const form = document.getElementById('form-2') as HTMLFormElement
@@ -114,16 +89,14 @@ function handleSecondForm(firstFormData: FormData) {
   form.addEventListener('submit', (e) => {
     e.preventDefault()
 
-    const secondFormData = new FormData(form)
+    const formData = new FormData(form)
 
-    if (!secondFormData.get('Answer')) {
+    if (['Full Name', 'Company', 'Job Title', 'Email'].some((key) => !formData.get(key))) {
       formError.innerHTML = 'Please fill out all the fields'
       return
     }
 
-    const formData = firstFormData
-    formData.set('Form ID', '2')
-    formData.set('Answer', secondFormData.get('Answer')!)
+    formData.set('Answer', answer)
 
     formError.innerHTML = ''
     popup.classList.add('popup_loading')

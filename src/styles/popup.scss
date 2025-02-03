@@ -48,6 +48,13 @@
       color: #3c53a3;
     }
 
+    &_type_answer {
+      top: 63.85dvh;
+      width: 13dvh;
+      line-height: 4.8dvh;
+      text-align: center;
+    }
+
     &_type_name {
       top: 48.05dvh;
     }
@@ -62,13 +69,6 @@
 
     &_type_email {
       top: 66.62dvh;
-    }
-
-    &_type_answer {
-      top: 63.85dvh;
-      width: 13dvh;
-      line-height: 4.8dvh;
-      text-align: center;
     }
   }
 
