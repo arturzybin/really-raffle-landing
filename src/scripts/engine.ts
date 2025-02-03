@@ -8,17 +8,18 @@ export function startEngine() {
   firstMilestone.classList.add('milestone_active')
   firstMilestone.addEventListener('click', openFirstPopup)
 
-  const startButton = document.getElementById('start-button')!
-  startButton.addEventListener('click', openFirstPopup)
+  const header = document.getElementById('header')!
+  header.classList.add('header_active')
+  header.addEventListener('click', openFirstPopup)
 }
 
 function openFirstPopup() {
   const firstMilestone = document.getElementById('milestone-1')!
   firstMilestone.removeEventListener('click', openFirstPopup)
 
-  const startButton = document.getElementById('start-button')!
-  startButton.removeEventListener('click', openFirstPopup)
-  startButton.remove()
+  const header = document.getElementById('header')!
+  header.classList.remove('header_active')
+  header.removeEventListener('click', openFirstPopup)
 
   const firstPopup = document.getElementById('popup-1')!
   firstPopup.classList.add('popup_visible')

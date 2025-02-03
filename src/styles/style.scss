@@ -1,14 +1,14 @@
 @use './reset';
 @use './main';
-@use './startButton';
+@use './header';
 @use './milestone';
 @use './starsPlayer';
 @use './avatar';
 @use './popup';
 
 :root {
-  --milestone-1-left: calc(50dvw - 8.3dvh);
-  --milestone-1-top: 89dvh;
-  --milestone-2-left: calc(50dvw - 5.5dvh);
-  --milestone-2-top: 54dvh;
+  --milestone-1-left: calc(50dvw - 9.7dvh);
+  --milestone-1-top: 83dvh;
+  --milestone-2-left: calc(50dvw - 6.2dvh);
+  --milestone-2-top: 48.1dvh;
 }

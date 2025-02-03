@@ -1,0 +1,61 @@
+.header {
+  position: absolute;
+  top: 0;
+  left: 0.5dvw;
+
+  overflow: hidden;
+
+  width: 99dvw;
+  border-radius: 1dvh;
+
+  color: white;
+
+  box-shadow: 0 7px 13px 0 rgb(8 20 54 / 60%);
+
+  &_active {
+    cursor: pointer;
+  }
+
+  &__top {
+    padding: 0.6dvh 1dvh;
+    font-size: 1.2dvh;
+    color: white;
+    background: rgb(240 104 35 / 90%);
+  }
+
+  &__bottom {
+    display: flex;
+    gap: 1.3dvh;
+    align-items: center;
+
+    padding: 1dvh;
+
+    background: rgb(25 46 112 / 90%);
+  }
+
+  &__logo {
+    flex: 0 0 6.4dvh;
+    min-width: 0;
+  }
+
+  &__content {
+    flex-grow: 1;
+    flex-shrink: 1;
+  }
+
+  &__text {
+    margin-bottom: 0.52dvh;
+    font-size: 1.68dvh;
+    line-height: 1.92dvh;
+    color: #fff;
+  }
+
+  &__stars {
+    width: 6.4dvh;
+  }
+
+  &__button {
+    flex: 0 0 13.2dvh;
+    min-width: 0;
+  }
+}
