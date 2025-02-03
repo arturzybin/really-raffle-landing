@@ -62,6 +62,7 @@ function handleFirstForm() {
 
         formError.innerHTML = ''
         popup.classList.remove('popup_visible')
+
         goToSecondMilestone(formData)
       })
       .catch(() => {
@@ -105,6 +106,7 @@ function openSecondPopup(firstFormData: FormData) {
 }
 
 function handleSecondForm(firstFormData: FormData) {
+  const secondMilestone = document.getElementById('milestone-2')!
   const popup = document.getElementById('popup-2')!
   const form = document.getElementById('form-2') as HTMLFormElement
   const formError = document.getElementById('form-2-error')!
@@ -142,6 +144,10 @@ function handleSecondForm(firstFormData: FormData) {
 
         formError.innerHTML = ''
         popup.classList.remove('popup_visible')
+
+        secondMilestone.classList.remove('milestone_active')
+        secondMilestone.classList.add('milestone_done')
+
         openThirdPopup()
       })
       .catch(() => {
