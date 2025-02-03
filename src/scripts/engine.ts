@@ -67,13 +67,42 @@ function goToSecondMilestone(answer: string) {
   setTimeout(() => {
     avatar.classList.remove('avatar_position_switching')
     avatar.classList.add('avatar_position_2')
+
     secondMilestone.classList.add('milestone_active')
+
     headerText.innerHTML = 'Challenge 2:<br />Fill in contact details'
+
+    setupSecondPopupOpening(answer)
+  }, 2000)
+}
+
+function setupSecondPopupOpening(answer: string) {
+  const timeoutId = setTimeout(() => {
+    secondMilestone.removeEventListener('click', openPopupAndCancelTimeout)
+
+    header.removeEventListener('click', openPopupAndCancelTimeout)
+    header.classList.remove('header_active')
+
+    openSecondPopup(answer)
   }, 2000)
 
-  setTimeout(() => {
+  const openPopupAndCancelTimeout = () => {
+    clearTimeout(timeoutId)
+
+    secondMilestone.removeEventListener('click', openPopupAndCancelTimeout)
+
+    header.removeEventListener('click', openPopupAndCancelTimeout)
+    header.classList.remove('header_active')
+
     openSecondPopup(answer)
-  }, 4000)
+  }
+
+  const secondMilestone = document.getElementById('milestone-2')!
+  secondMilestone.addEventListener('click', openPopupAndCancelTimeout)
+
+  const header = document.getElementById('header')!
+  header.classList.add('header_active')
+  header.addEventListener('click', openPopupAndCancelTimeout)
 }
 
 function openSecondPopup(answer: string) {

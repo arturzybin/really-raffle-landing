@@ -9,4 +9,6 @@ export function showStarsAnimation() {
   player.classList.add('stars-player')
 
   mainElement.append(player)
+
+  setTimeout(() => player.remove(), 2000)
 }
