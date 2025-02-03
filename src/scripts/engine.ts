@@ -123,8 +123,17 @@ function handleSecondForm(answer: string) {
 
     const formData = new FormData(form)
 
-    if (['Full Name', 'Company', 'Job Title', 'Email'].some((key) => !formData.get(key))) {
+    if (['Full Name', 'Company', 'Job Title', 'Work Email'].some((key) => !formData.get(key))) {
       formError.innerHTML = 'Please fill out all the fields'
+      return
+    }
+
+    if (
+      !/[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/g.test(
+        formData.get('Work Email') as string,
+      )
+    ) {
+      formError.innerHTML = 'Please enter a valid email address'
       return
     }
 
