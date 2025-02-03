@@ -1,0 +1,24 @@
+.stars-player {
+  position: absolute;
+  top: 0;
+  left: var(--milestone-1-left);
+  transform: translateX(-50%);
+
+  height: calc(var(--milestone-1-top) * 1.05 / 2);
+
+  opacity: 0;
+
+  animation: 2s stars;
+}
+
+@keyframes stars {
+  from {
+    transform: translate(-50%, 100%);
+    opacity: 1;
+  }
+
+  to {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+}

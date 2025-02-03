@@ -1,0 +1,32 @@
+.avatar {
+  position: absolute;
+  transform: translate(-50%, -120%);
+  width: 13dvh;
+  height: 13dvh;
+
+  &_position_1 {
+    top: var(--milestone-1-top);
+    left: var(--milestone-1-left);
+  }
+
+  &_position_switching {
+    animation: avatar-switching-milestones 1s ease-in-out forwards;
+  }
+
+  &_position_2 {
+    top: var(--milestone-2-top);
+    left: var(--milestone-2-left);
+  }
+}
+
+@keyframes avatar-switching-milestones {
+  from {
+    top: var(--milestone-1-top);
+    left: var(--milestone-1-left);
+  }
+
+  to {
+    top: var(--milestone-2-top);
+    left: var(--milestone-2-left);
+  }
+}

@@ -1,0 +1,141 @@
+.popup {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: none;
+
+  width: 100dvw;
+  height: 100dvh;
+
+  background-color: rgb(0 0 0 / 70%);
+
+  &_visible {
+    display: block;
+  }
+
+  &_loading {
+    .popup__loader-container {
+      display: grid;
+    }
+  }
+
+  &__background {
+    position: absolute;
+    top: 14dvh;
+    left: 50dvw;
+    transform: translateX(-50%);
+
+    height: 73dvh;
+  }
+
+  &__input {
+    position: absolute;
+    left: 50dvw;
+    transform: translateX(-50%);
+
+    width: 22dvh;
+    border: none;
+
+    font-size: 1.75dvh;
+    line-height: 3.5dvh;
+    color: #3c53a3;
+
+    background: none;
+    outline: none;
+
+    &::placeholder {
+      color: #3c53a3;
+    }
+
+    &_type_name {
+      top: 48.05dvh;
+    }
+
+    &_type_company {
+      top: 54.25dvh;
+    }
+
+    &_type_job {
+      top: 60.45dvh;
+    }
+
+    &_type_email {
+      top: 66.62dvh;
+    }
+
+    &_type_answer {
+      top: 63.85dvh;
+      width: 13dvh;
+      line-height: 4.8dvh;
+      text-align: center;
+    }
+  }
+
+  &__submit-button {
+    cursor: pointer;
+
+    position: absolute;
+    top: 79dvh;
+    left: 50dvw;
+    transform: translateX(-50%);
+
+    width: 15dvh;
+    height: 4.5dvh;
+
+    opacity: 0;
+
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* stylelint-disable-next-line no-descending-specificity */
+  &__loader-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: none;
+    place-items: center;
+
+    width: 100dvw;
+    height: 100dvh;
+
+    background-color: rgb(0 0 0 / 50%);
+  }
+
+  &__loader {
+    width: 8dvh;
+    height: 8dvh;
+    border: 1dvh solid #fff;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+
+    animation: rotation 1s linear infinite;
+  }
+
+  &__error {
+    pointer-events: none;
+
+    position: absolute;
+    bottom: 2dvh;
+    left: 50dvw;
+    transform: translateX(-50%);
+
+    width: 35dvh;
+
+    font-size: 3dvh;
+    color: red;
+    text-align: center;
+    text-shadow: #000 2px 2px 10px;
+  }
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
