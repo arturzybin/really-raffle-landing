@@ -51,6 +51,7 @@ function handleFirstForm() {
 }
 
 function goToSecondMilestone(answer: string) {
+  const headerText = document.getElementById('header-text')!
   const firstMilestone = document.getElementById('milestone-1')!
   const secondMilestone = document.getElementById('milestone-2')!
   const avatar = document.getElementById('avatar')!
@@ -67,6 +68,7 @@ function goToSecondMilestone(answer: string) {
     avatar.classList.remove('avatar_position_switching')
     avatar.classList.add('avatar_position_2')
     secondMilestone.classList.add('milestone_active')
+    headerText.innerHTML = 'Challenge 2:<br />Fill in contact details'
   }, 2000)
 
   setTimeout(() => {
