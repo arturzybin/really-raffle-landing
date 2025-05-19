@@ -57,6 +57,8 @@ function handleFirstForm() {
 
 function goToSecondMilestone(answer: string) {
   const headerText = document.getElementById('header-text')!
+  const headerStarsFirst = document.getElementById('header-stars-first')!
+  const headerStarsSecond = document.getElementById('header-stars-second')!
   const firstMilestone = document.getElementById('milestone-1')!
   const secondMilestone = document.getElementById('milestone-2')!
   const avatar = document.getElementById('avatar')!
@@ -75,7 +77,9 @@ function goToSecondMilestone(answer: string) {
 
     secondMilestone.classList.add('milestone_active')
 
-    headerText.innerHTML = 'Challenge 2:<br />Fill in contact details'
+    headerText.innerHTML = '<span class="header__text-yellow-accent">Challenge 2:</span> Enter your details'
+    headerStarsFirst.style.display = 'none'
+    headerStarsSecond.style.display = 'block'
 
     setupSecondPopupOpening(answer)
   }, 2000)

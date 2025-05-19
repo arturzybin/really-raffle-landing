@@ -11,14 +11,20 @@
   <body>
     <div id="main" class="main">
       <div id="header" class="header">
-        <div class="header__top">Really - Play to Earn by Persona.ly</div>
-        <div class="header__bottom">
+        <div class="header__top">
           <img class="header__logo" src="/images/header_logo.webp" />
           <div class="header__content">
-            <div id="header-text" class="header__text">Challenge 1:<br />Guess the number of coins</div>
-            <img class="header__stars" src="/images/header_stars.webp" />
+            <div id="header-text" class="header__text">
+              <span class="header__text-yellow-accent">Challenge 1:</span> Guess the number of coins in the bowl
+            </div>
+            <img id="header-stars-first" class="header__stars-first" src="/images/header_stars_first.png" />
+            <img id="header-stars-second" class="header__stars-second" src="/images/header_stars_second.png" style="display: none;" />
           </div>
           <img class="header__button" src="/images/header_button.webp" />
+        </div>
+        <div class="header__bottom">
+          Take a chance to win an <img class="header__bottom-iphone" src="/images/header_iphone.png" /> playing this
+          game
         </div>
       </div>
 
@@ -40,13 +46,7 @@
         ></lottie-player>
       </div>
 
-      <lottie-player
-        id="avatar"
-        src="/really-treasure/lottie/avatar.json"
-        class="avatar"
-        loop
-        autoplay
-      ></lottie-player>
+      <lottie-player id="avatar" src="/really-treasure/lottie/avatar.json" class="avatar" loop autoplay></lottie-player>
 
       <div class="popup" id="popup-1">
         <img src="/images/popup_top_image.webp" class="popup__top-image" draggable="false" />

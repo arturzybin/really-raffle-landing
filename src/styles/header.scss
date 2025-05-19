@@ -17,13 +17,6 @@
   }
 
   &__top {
-    padding: 0.6dvh 1dvh;
-    font-size: 1.2dvh;
-    color: white;
-    background: rgb(240 104 35 / 90%);
-  }
-
-  &__bottom {
     display: flex;
     gap: 1.3dvh;
     align-items: center;
@@ -39,23 +32,54 @@
   }
 
   &__content {
+    display: flex;
+    flex-direction: column;
     flex-grow: 1;
     flex-shrink: 1;
+    align-self: stretch;
   }
 
   &__text {
+    flex-grow: 1;
+
     margin-bottom: 0.52dvh;
-    font-size: 1.68dvh;
+
+    font-size: 1.45dvh;
     line-height: 1.92dvh;
     color: #fff;
   }
 
-  &__stars {
-    width: 6.4dvh;
+  &__text-yellow-accent {
+    color: #fbe689;
+  }
+
+  &__stars-first {
+    width: 13dvh;
+  }
+
+  &__stars-second {
+    width: 15dvh;
   }
 
   &__button {
     flex: 0 0 13.2dvh;
     min-width: 0;
+  }
+
+  &__bottom {
+    padding: 0.6dvh 1dvh;
+
+    font-size: 1.3dvh;
+    color: white;
+    text-align: center;
+
+    background: #0d8ef5;
+  }
+
+  &__bottom-iphone {
+    display: inline-block;
+    height: 1.4dvh;
+    margin: 0 2px;
+    vertical-align: top;
   }
 }
