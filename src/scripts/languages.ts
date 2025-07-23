@@ -57,29 +57,30 @@ const placeholders = [
   { elementId: 'input-full-name', english: 'Full Name', secondLanguage: '姓名' },
   { elementId: 'input-company', english: 'Company', secondLanguage: '公司' },
   { elementId: 'input-job-title', english: 'Job Title', secondLanguage: '职位' },
+  { elementId: 'input-wechat', english: 'WeChat', secondLanguage: '微信' },
   { elementId: 'input-email', english: 'Email', secondLanguage: '邮箱' },
 ] as const satisfies ElementTranslation[]
 
 const images = [
   {
     elementId: 'header-button',
-    english: '/really-treasure/images/header_button.webp',
-    secondLanguage: '/really-treasure/images/header_button.webp',
+    english: '/really-treasure/images/header_button_en.webp',
+    secondLanguage: '/really-treasure/images/header_button_zn.webp',
   },
   {
     elementId: 'popup-1-background',
-    english: '/really-treasure/images/popup_1_background.webp',
-    secondLanguage: '/really-treasure/images/popup_1_background.webp',
+    english: '/really-treasure/images/popup_1_background_en.webp',
+    secondLanguage: '/really-treasure/images/popup_1_background_zn.webp',
   },
   {
     elementId: 'popup-2-background',
-    english: '/really-treasure/images/popup_2_background.webp',
-    secondLanguage: '/really-treasure/images/popup_2_background.webp',
+    english: '/really-treasure/images/popup_2_background_en.webp',
+    secondLanguage: '/really-treasure/images/popup_2_background_zn.webp',
   },
   {
     elementId: 'popup-3-background',
-    english: '/really-treasure/images/popup_3_background.webp',
-    secondLanguage: '/really-treasure/images/popup_3_background.webp',
+    english: '/really-treasure/images/popup_3_background_en.webp',
+    secondLanguage: '/really-treasure/images/popup_3_background_zn.webp',
   },
 ] as const satisfies ElementTranslation[]
 
