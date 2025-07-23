@@ -15,7 +15,7 @@
     width: 19dvh;
     height: 19dvh;
 
-    background-image: url('../assets/images/milestone_1.webp');
+    background-image: url('../assets/imagesForCss/milestone_1.webp');
 
     .milestone__halo {
       transform: rotateX(-31deg) translateY(-0.16dvh);
@@ -29,7 +29,7 @@
     width: 17dvh;
     height: 17dvh;
 
-    background-image: url('../assets/images/milestone_2.webp');
+    background-image: url('../assets/imagesForCss/milestone_2.webp');
 
     .milestone__halo {
       transform: rotateX(-31deg) translate(0, -0.28dvh);
@@ -45,7 +45,7 @@
   }
 
   &_done {
-    background-image: url('../assets/images/milestone_done.webp');
+    background-image: url('../assets/imagesForCss/milestone_done.webp');
 
     .milestone__halo {
       animation: fade-out 1s ease-in-out forwards;
