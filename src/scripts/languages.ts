@@ -84,6 +84,9 @@ const images = [
 ] as const satisfies ElementTranslation[]
 
 function applyCurrentLanguage() {
+  const root = document.querySelector(':root') as HTMLElement
+  root.style.setProperty('--font-family', selectedLanguage === 'english' ? 'Lilita One' : 'ZCOOL KuaiLe')
+
   elements.forEach((config) => {
     const element = document.getElementById(config.elementId)
     if (!element) return
