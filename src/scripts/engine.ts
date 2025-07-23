@@ -1,3 +1,4 @@
+import { getTranslatedText } from './languages'
 import { showStarsAnimation } from './showStarsAnimation'
 
 export function startEngine() {
@@ -39,12 +40,12 @@ function handleFirstForm() {
     const answer = formData.get('Answer') as string
 
     if (!answer) {
-      formError.innerHTML = 'Please complete the form before submitting'
+      formError.innerHTML = getTranslatedText('error-complete-form')
       return
     }
 
     if (!/^\d+$/.test(answer)) {
-      formError.innerHTML = 'Please enter only numbers for your coin guess'
+      formError.innerHTML = getTranslatedText('error-coins-number')
       return
     }
 
@@ -77,7 +78,10 @@ function goToSecondMilestone(answer: string) {
 
     secondMilestone.classList.add('milestone_active')
 
-    headerText.innerHTML = '<span class="header__text-yellow-accent">Challenge 2:</span> Enter your details'
+    headerText.innerHTML = `
+      <span id="challenge-2-title" class="header__text-yellow-accent">${getTranslatedText('challenge-2-title')}</span>
+      <span id="challenge-2-text">${getTranslatedText('challenge-2-text')}</span>
+    `
     headerStarsFirst.style.display = 'none'
     headerStarsSecond.style.display = 'block'
 
@@ -133,7 +137,7 @@ function handleSecondForm(answer: string) {
     const formData = new FormData(form)
 
     if (['Full Name', 'Company', 'Job Title', 'Work Email'].some((key) => !formData.get(key))) {
-      formError.innerHTML = 'Please complete the form before submitting'
+      formError.innerHTML = getTranslatedText('error-complete-form')
       return
     }
 
@@ -142,7 +146,7 @@ function handleSecondForm(answer: string) {
         formData.get('Work Email') as string,
       )
     ) {
-      formError.innerHTML = 'Please enter a valid email address'
+      formError.innerHTML = getTranslatedText('error-email')
       return
     }
 
@@ -161,7 +165,7 @@ function handleSecondForm(answer: string) {
       .then((response) => response.json())
       .then((data) => {
         if (data.result !== 'success') {
-          formError.innerHTML = 'Something went wrong :(<br />Please try again'
+          formError.innerHTML = getTranslatedText('error-something-went-wrong')
           return
         }
 
@@ -174,7 +178,7 @@ function handleSecondForm(answer: string) {
         openThirdPopup()
       })
       .catch(() => {
-        formError.innerHTML = 'Something went wrong :(<br />Please try again'
+        formError.innerHTML = getTranslatedText('error-something-went-wrong')
       })
       .finally(() => {
         popup.classList.remove('popup_loading')

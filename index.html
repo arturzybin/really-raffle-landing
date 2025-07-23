@@ -10,21 +10,33 @@
 
   <body>
     <div id="main" class="main">
+      <div class="language-toggle-container">
+        <input type="checkbox" id="language-toggle" class="language-toggle-input" checked style="display: none" />
+        EN<label for="language-toggle" class="language-toggle-label"></label>ZH
+      </div>
+
       <div id="header" class="header">
         <div class="header__top">
           <img class="header__logo" src="/images/header_logo.webp" />
           <div class="header__content">
             <div id="header-text" class="header__text">
-              <span class="header__text-yellow-accent">Challenge 1:</span> Guess the number of coins in the bowl
+              <span id="challenge-1-title" class="header__text-yellow-accent">Challenge 1:</span>
+              <span id="challenge-1-text"> Guess the number of coins in the bowl</span>
             </div>
             <img id="header-stars-first" class="header__stars-first" src="/images/header_stars_first.png" />
-            <img id="header-stars-second" class="header__stars-second" src="/images/header_stars_second.png" style="display: none;" />
+            <img
+              id="header-stars-second"
+              class="header__stars-second"
+              src="/images/header_stars_second.png"
+              style="display: none"
+            />
           </div>
-          <img class="header__button" src="/images/header_button.webp" />
+          <img id="header-button" class="header__button" src="/images/header_button.webp" />
         </div>
         <div class="header__bottom">
-          Take a chance to win an <img class="header__bottom-iphone" src="/images/header_iphone.png" /> playing this
-          game
+          <span id="take-a-chance">Take a chance to win an </span>
+          <img class="header__bottom-iphone" src="/images/header_iphone.png" />
+          <span id="playing-this-game"> playing this game</span>
         </div>
       </div>
 
@@ -51,10 +63,15 @@
       <div class="popup" id="popup-1">
         <img src="/images/popup_top_image.webp" class="popup__top-image" draggable="false" />
 
-        <img src="/images/popup_1_background.webp" class="popup__background" draggable="false" />
+        <img
+          id="popup-1-background"
+          src="/images/popup_1_background.webp"
+          class="popup__background"
+          draggable="false"
+        />
 
         <form id="form-1">
-          <input class="popup__input popup__input_type_answer" placeholder="Your answer" type="text" name="Answer" />
+          <input id="input-coins-amount" class="popup__input popup__input_type_answer" placeholder="Your answer" type="text" name="Answer" />
 
           <button class="popup__submit-button" type="submit"></button>
         </form>
@@ -69,13 +86,18 @@
       <div class="popup" id="popup-2">
         <img src="/images/popup_top_image.webp" class="popup__top-image" draggable="false" />
 
-        <img src="/images/popup_2_background.webp" class="popup__background" draggable="false" />
+        <img
+          id="popup-2-background"
+          src="/images/popup_2_background.webp"
+          class="popup__background"
+          draggable="false"
+        />
 
         <form id="form-2">
-          <input class="popup__input popup__input_type_name" placeholder="Full Name" type="text" name="Full Name" />
-          <input class="popup__input popup__input_type_company" placeholder="Company" type="text" name="Company" />
-          <input class="popup__input popup__input_type_job" placeholder="Job Title" type="text" name="Job Title" />
-          <input class="popup__input popup__input_type_email" placeholder="Work Email" type="text" name="Work Email" />
+          <input id="input-full-name" class="popup__input popup__input_type_name" placeholder="Full Name" type="text" name="Full Name" />
+          <input id="input-company" class="popup__input popup__input_type_company" placeholder="Company" type="text" name="Company" />
+          <input id="input-job-title" class="popup__input popup__input_type_job" placeholder="Job Title" type="text" name="Job Title" />
+          <input id="input-email" class="popup__input popup__input_type_email" placeholder="Work Email" type="text" name="Work Email" />
 
           <button class="popup__submit-button" type="submit"></button>
         </form>
@@ -90,7 +112,12 @@
       <div class="popup" id="popup-3">
         <img src="/images/popup_top_image.webp" class="popup__top-image" draggable="false" />
 
-        <img src="/images/popup_3_background.webp" class="popup__background" draggable="false" />
+        <img
+          id="popup-3-background"
+          src="/images/popup_3_background.webp"
+          class="popup__background"
+          draggable="false"
+        />
 
         <form id="form-3">
           <button class="popup__submit-button" type="submit"></button>
