@@ -3,7 +3,7 @@ export function showStarsAnimation() {
 
   const player = document.createElement('lottie-player')
 
-  player.setAttribute('src', '/really-treasure/lottie/stars.json')
+  player.setAttribute('src', '/really-treasure-chinajoy/lottie/stars.json')
   player.setAttribute('autoplay', '')
 
   player.classList.add('stars-player')
