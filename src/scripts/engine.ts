@@ -136,14 +136,18 @@ function handleSecondForm(answer: string) {
 
     const formData = new FormData(form)
 
-    if (['Full Name', 'Company', 'Job Title', 'Work Email'].some((key) => !formData.get(key))) {
+    if (
+      ['Full Name', 'Company', 'Job Title'].some((key) => !formData.get(key)) ||
+      ['WeChat', 'Email'].every((key) => !formData.get(key))
+    ) {
       formError.innerHTML = getTranslatedText('error-complete-form')
       return
     }
 
     if (
+      formData.get('Email') &&
       !/[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/gi.test(
-        formData.get('Work Email') as string,
+        formData.get('Email') as string,
       )
     ) {
       formError.innerHTML = getTranslatedText('error-email')
