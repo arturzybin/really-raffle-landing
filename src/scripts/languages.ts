@@ -87,6 +87,7 @@ const images = [
 function applyCurrentLanguage() {
   const root = document.querySelector(':root') as HTMLElement
   root.style.setProperty('--font-family', selectedLanguage === 'english' ? 'Lilita One' : 'ZCOOL KuaiLe')
+  root.style.setProperty('--font-family-form-inputs', selectedLanguage === 'english' ? 'Lilita One' : 'Noto Sans TC')
 
   elements.forEach((config) => {
     const element = document.getElementById(config.elementId)
