@@ -64,23 +64,23 @@ const placeholders = [
 const images = [
   {
     elementId: 'header-button',
-    english: '/really-treasure-chinajoy/images/header_button_en.webp',
-    secondLanguage: '/really-treasure-chinajoy/images/header_button_zn.webp',
+    english: 'https://ply.cdn.persona.ly/really-treasure-chinajoy/chinajoy_cdn/header_button_en.webp',
+    secondLanguage: 'https://ply.cdn.persona.ly/really-treasure-chinajoy/chinajoy_cdn/header_button_zn.webp',
   },
   {
     elementId: 'popup-1-background',
-    english: '/really-treasure-chinajoy/images/popup_1_background_en.webp',
-    secondLanguage: '/really-treasure-chinajoy/images/popup_1_background_zn.webp',
+    english: 'https://ply.cdn.persona.ly/really-treasure-chinajoy/chinajoy_cdn/popup_1_background_en.webp',
+    secondLanguage: 'https://ply.cdn.persona.ly/really-treasure-chinajoy/chinajoy_cdn/popup_1_background_zn.webp',
   },
   {
     elementId: 'popup-2-background',
-    english: '/really-treasure-chinajoy/images/popup_2_background_en.webp',
-    secondLanguage: '/really-treasure-chinajoy/images/popup_2_background_zn.webp',
+    english: 'https://ply.cdn.persona.ly/really-treasure-chinajoy/chinajoy_cdn/popup_2_background_en.webp',
+    secondLanguage: 'https://ply.cdn.persona.ly/really-treasure-chinajoy/chinajoy_cdn/popup_2_background_zn.webp',
   },
   {
     elementId: 'popup-3-background',
-    english: '/really-treasure-chinajoy/images/popup_3_background_en.webp',
-    secondLanguage: '/really-treasure-chinajoy/images/popup_3_background_zn.webp',
+    english: 'https://ply.cdn.persona.ly/really-treasure-chinajoy/chinajoy_cdn/popup_3_background_en.webp',
+    secondLanguage: 'https://ply.cdn.persona.ly/really-treasure-chinajoy/chinajoy_cdn/popup_3_background_zn.webp',
   },
 ] as const satisfies ElementTranslation[]
 
