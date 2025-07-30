@@ -58,6 +58,12 @@
       color: #3c53a3;
     }
 
+    &:focus {
+      &::placeholder {
+        color: transparent;
+      }
+    }
+
     &_type_answer {
       top: 62.55dvh;
       width: 13dvh;
