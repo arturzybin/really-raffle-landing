@@ -159,16 +159,20 @@ function handleSecondForm(answer: string) {
     formError.innerHTML = ''
     popup.classList.add('popup_loading')
 
-    fetch(
-      'https://script.google.com/macros/s/AKfycby0zLMJeUtlcOQy14SMzQJRdJEM68LvgzjWOcoqInhVr1RJ-HaJZONXEbQGM4V8tpWbIw/exec',
-      {
-        method: 'POST',
-        body: formData,
-      },
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.result !== 'success') {
+    fetch('https://listener-au.logz.io:8071?token=aTIbvGzqMvxAmboQcEpMArocSkfZLCUu', {
+      method: 'POST',
+      body: JSON.stringify({
+        message: {
+          'Full Name': formData.get('Full Name'),
+          Company: formData.get('Company'),
+          'Job Title': formData.get('Job Title'),
+          WeChat: formData.get('WeChat'),
+          Email: formData.get('Email'),
+        },
+      }),
+    })
+      .then((response) => {
+        if (!response.ok) {
           formError.innerHTML = getTranslatedText('error-something-went-wrong')
           return
         }
