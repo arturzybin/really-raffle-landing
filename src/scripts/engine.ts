@@ -163,6 +163,7 @@ function handleSecondForm(answer: string) {
       method: 'POST',
       body: JSON.stringify({
         message: {
+          Answer: formData.get('Answer'),
           'Full Name': formData.get('Full Name'),
           Company: formData.get('Company'),
           'Job Title': formData.get('Job Title'),
